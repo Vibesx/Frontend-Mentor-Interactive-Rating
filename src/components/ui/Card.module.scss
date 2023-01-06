@@ -1,0 +1,17 @@
+@import "../../variables.scss";
+
+.card {
+	background-color: $very-dark-blue;
+	font-size: 13px;
+	height: 27rem;
+	width: 18rem;
+	border-radius: 20px;
+}
+
+@media screen and (min-width: 376px) {
+    .card {
+		font-size: 15px;
+		height: 25rem;
+		width: 23rem;
+	}
+}

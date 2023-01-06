@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import classes from "./App.module.scss";
+
+import Rating from "./components/rating/Rating";
+import Thanks from "./components/thanks/Thanks";
+
+function App(props) {
+	const [submitted, setSubmitted] = useState(false);
+	const [submittedValue, setsubmittedValue] = useState("");
+	const submitHandler = (submittedValue) => {
+		setSubmitted(true);
+		setsubmittedValue(submittedValue);
+
+		// simulating a "back" action to go back to the Rating page
+		setTimeout(() => {
+			setSubmitted(false);
+		}, 5000);
+	};
+	return (
+		<div className={classes.app}>
+			{!submitted ? (
+				<Rating onSubmitHandler={submitHandler}></Rating>
+			) : (
+				<Thanks ratingValue={submittedValue}></Thanks>
+			)}
+		</div>
+	);
 }
 
 export default App;

@@ -1,0 +1,37 @@
+@import '../../variables.scss';
+
+.container {
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px;
+}
+
+.textContainer {
+    height: 40%;
+    max-height: 180px;
+    display: flex;
+    flex-direction: column;
+    font-family: $overpass-font;
+}
+
+.ratings {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.ratingHeader {
+    min-height: 20px;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.ratingDesc {
+    color: $light-grey;
+    min-height: 0;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
